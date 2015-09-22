@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="GrooveyFM">
+  <DataContextMoniker Name="/GrooveyFMDataContext" />
+  <nestedChildShapes>
+    <classShape Id="17c6e1ad-6482-4625-89ae-2975924bcf9f" absoluteBounds="3.75, 4.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/GrooveyFMDataContext/NoResult" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33052551-a726-410f-be93-52c8e5f6387f" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9771ef77-5074-4a30-904d-46c7989cc581" absoluteBounds="6.75, 0.75, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/GrooveyFMDataContext/Stat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af128653-8840-4772-936d-9eb9f775a746" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="844575a5-0bf0-4cf2-a700-7e03e8b763cc" absoluteBounds="6.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/GrooveyFMDataContext/Playlist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8df251c9-5f28-4662-acf1-8ecbd9b3fc89" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2535a79-63d1-4c8a-af96-905026c64257" absoluteBounds="6.75, 6.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/GrooveyFMDataContext/SearchQueue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bb56c7c-b009-4e3d-a8a4-9a853fb20759" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="52ca9337-7ec3-4894-aac9-a07fb7f4531c" absoluteBounds="3.5, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/GrooveyFMDataContext/Source" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93162845-f58a-4ac5-b9ce-ff4f2181e0fe" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21b99225-7fba-4327-a10e-8d4dcd99c753" absoluteBounds="0.75, 1.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/GrooveyFMDataContext/SourceType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4de8f134-a71d-4f16-a788-e18ff82ac5fc" absoluteBounds="0.765, 1.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7755e9fd-7866-4dcb-b38e-e5bd64273fee" absoluteBounds="0.75, 5.125, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/GrooveyFMDataContext/Station" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eab28421-957b-47b3-87be-9825a094d259" absoluteBounds="0.765, 5.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.09699625651042); (3.5 : 2.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GrooveyFMDataContext/SourceType/SourceType_Source" />
+      <nodes>
+        <classShapeMoniker Id="21b99225-7fba-4327-a10e-8d4dcd99c753" />
+        <classShapeMoniker Id="52ca9337-7ec3-4894-aac9-a07fb7f4531c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.83579752604167); (3.59375 : 6.83579752604167); (3.59375 : 3.34780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GrooveyFMDataContext/Station/Station_Source" />
+      <nodes>
+        <classShapeMoniker Id="7755e9fd-7866-4dcb-b38e-e5bd64273fee" />
+        <classShapeMoniker Id="52ca9337-7ec3-4894-aac9-a07fb7f4531c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="grooveyfm" Class="GrooveyFMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.NoResults" Member="NoResults">
+    <Type Name="NoResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Artist" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Manual" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Stats" Member="Stats">
+    <Type Name="Stat">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Hour" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Station" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Searches" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Inserts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Playlists" Member="Playlists">
+    <Type Name="Playlist">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Artist" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SongId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Station" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SearchQueue" Member="SearchQueues">
+    <Type Name="SearchQueue">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Station" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Artist" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sources" Member="Sources">
+    <Type Name="Source">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Station" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinPullDelay" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DailyPullTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="LastPull" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="SourceType_Source" Member="SourceType" ThisKey="Type" OtherKey="Id" Type="SourceType" IsForeignKey="true" />
+      <Association Name="Station_Source" Member="Station1" ThisKey="Station" OtherKey="Id" Type="Station" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SourceTypes" Member="SourceTypes">
+    <Type Name="SourceType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="SourceType_Source" Member="Sources" ThisKey="Id" OtherKey="Type" Type="Source" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Stations" Member="Stations">
+    <Type Name="Station">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CallSign" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PlaylistName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PlaylistId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlaylistUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Station_Source" Member="Sources" ThisKey="Id" OtherKey="Station" Type="Source" />
+    </Type>
+  </Table>
+</Database>
